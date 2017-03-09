@@ -34,6 +34,8 @@ namespace WebApi
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
     }
 }
