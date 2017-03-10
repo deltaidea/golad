@@ -1,9 +1,8 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardText} from 'material-ui/Card';
 import Icon from './Icon';
 
-const GameModeCard = (props) => (
+const GameModeCard = () => (
   <Card style={{
     marginTop: '30px',
   }}>
