@@ -6,12 +6,17 @@
     "react-scripts": "0.9.4"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "classnames": "^2.2.5",
+    "flexboxgrid": "^6.3.1",
     "material-ui": "^0.17.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-flexbox-grid": "https://github.com/roylee0704/react-flexbox-grid.git#master",
     "react-tap-event-plugin": "^2.0.1"
   },
   "scripts": {
+    "postinstall": "(cd node_modules/react-flexbox-grid && npm install && npm run build)",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
