@@ -4,7 +4,7 @@ import {Card, CardText} from 'material-ui/Card';
 
 const GameModeCard = ({name, description}) => (
   <Card style={{
-    height: '150px',
+    minHeight: '150px',
     paddingTop: '10px',
     marginTop: '30px',
   }}>
