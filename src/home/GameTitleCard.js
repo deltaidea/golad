@@ -1,15 +1,18 @@
 import React from 'react';
 import {Card, CardText} from 'material-ui/Card';
-import {red500, indigo500} from 'material-ui/styles/colors';
+import muiThemeable from 'material-ui/styles/muiThemeable';
 import Icon from './Icon';
 
-const GameModeCard = () => (
+const GameModeCard = ({muiTheme}) => (
+  console.log(muiTheme),
   <Card style={{marginTop: '30px'}}>
     <CardText>
-      <Icon width='50%' maxWidth='300px' playerColor={red500} opponentColor={indigo500}/>
+      <Icon width='50%' maxWidth='300px'
+        playerColor={muiTheme.palette.primary2Color}
+        opponentColor={muiTheme.palette.accent2Color}/>
       <div style={{marginTop: '1em', fontSize: '2em'}}>Game of Life and Death</div>
     </CardText>
   </Card>
 );
 
-export default GameModeCard;
+export default muiThemeable()(GameModeCard);

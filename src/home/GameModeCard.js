@@ -1,15 +1,15 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import {Card, CardText} from 'material-ui/Card';
 
-const GameModeCard = ({name, description}) => (
+const GameModeCard = ({name, description, isPrimary}) => (
   <Card style={{
     minHeight: '150px',
     paddingTop: '10px',
     marginTop: '30px',
   }}>
     <CardText>
-      <RaisedButton label={name} />
+      <FlatButton label={name} primary={isPrimary} secondary={!isPrimary} />
       <p>{description}</p>
     </CardText>
   </Card>

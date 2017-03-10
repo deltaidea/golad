@@ -14,6 +14,7 @@ const HomePage = () => (
       <Col {...colSizing}>
         <GameModeCard
           name="Random opponent"
+          isPrimary={true}
           description="We will choose an opponent for you among others currently on the website." />
       </Col>
       <Col {...colSizing} first="lg">
