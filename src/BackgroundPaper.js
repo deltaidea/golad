@@ -14,7 +14,7 @@ const BackgroundPaper = (props) => (
   <div style={{
     backgroundColor: props.muiTheme.palette.canvasColor,
     width: "100%",
-    height: "100%"
+    height: "100%",
   }}>
     {props.children}
   </div>
