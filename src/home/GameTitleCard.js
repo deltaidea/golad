@@ -4,7 +4,6 @@ import muiThemeable from 'material-ui/styles/muiThemeable';
 import Icon from './Icon';
 
 const GameModeCard = ({muiTheme}) => (
-  console.log(muiTheme),
   <Card style={{marginTop: '30px'}}>
     <CardText>
       <Icon width='50%' maxWidth='300px'
