@@ -13,8 +13,8 @@ import muiThemeable from 'material-ui/styles/muiThemeable';
 const BackgroundPaper = (props) => (
   <div style={{
     backgroundColor: props.muiTheme.palette.canvasColor,
-    width: "100%",
-    height: "100%",
+    minWidth: "100%",
+    minHeight: "100%",
   }}>
     {props.children}
   </div>
