@@ -26,7 +26,7 @@ const HomePage = () => (
       <Col xs={12} md={8} lg={4} style={{textAlign: "center"}}>
         <GameModeCard
           name="Random opponent"
-          description="We will choose an opponent for you among others currently on the website. Usually takes a minute."
+          description="We will choose an opponent for you among others currently on the website."
         ></GameModeCard>
       </Col>
     </Row>
