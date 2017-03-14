@@ -17,7 +17,7 @@ module.exports = (env) => {
             ]
         },
         entry: {
-            vendor: [ 'event-source-polyfill', 'isomorphic-fetch', 'react', 'react-dom', 'react-router', 'style-loader', 'jquery'],
+            vendor: [ 'event-source-polyfill', 'isomorphic-fetch', 'react', 'react-dom', 'react-router', 'jquery'],
         },
         output: {
             path: path.join(__dirname, 'wwwroot', 'dist'),

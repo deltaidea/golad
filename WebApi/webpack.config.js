@@ -17,7 +17,7 @@ module.exports = (env) => {
         module: {
             rules: [
                 { test: /\.(js|jsx)$/, include: /ClientApp/, use: 'babel-loader' },
-                { test: /\.css$/, use: isDevBuild ? ['style-loader', 'css-loader'] : ExtractTextPlugin.extract({ use: 'css-loader' }) },
+                { test: /\.css$/, use: ['style-loader', 'css-loader'] },
                 { test: /\.(png|jpg|jpeg|gif|svg)$/, use: 'url-loader?limit=25000' }
             ]
         },
@@ -34,8 +34,7 @@ module.exports = (env) => {
             })
         ] : [
             // Plugins that apply in production builds only
-            new webpack.optimize.UglifyJsPlugin(),
-            new ExtractTextPlugin('site.css')
+            new webpack.optimize.UglifyJsPlugin()
         ])
     }];
 };
