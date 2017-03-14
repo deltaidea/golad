@@ -1,0 +1,34 @@
+{
+  "name": "goladspa",
+  "version": "0.0.0",
+  "devDependencies": {
+    "aspnet-webpack": "^1.0.27",
+    "aspnet-webpack-react": "^1.0.4",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "event-source-polyfill": "^0.0.7",
+    "extract-text-webpack-plugin": "^2.0.0-rc",
+    "file-loader": "^0.9.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^2.2.1",
+    "json-loader": "^0.5.4",
+    "material-ui": "^0.17.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-flexbox-grid": "https://github.com/roylee0704/react-flexbox-grid.git#master",
+    "react-router": "^2.8.1",
+    "react-tap-event-plugin": "^2.0.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.0",
+    "webpack-hot-middleware": "^2.12.2"
+  },
+  "scripts": {
+    "postinstall": "(cd node_modules/react-flexbox-grid && npm install && npm run build)"
+  },
+  "dependencies": {}
+}

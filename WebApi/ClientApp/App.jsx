@@ -12,7 +12,7 @@ const goladColors = {
   primary3Color: colors.redA200,
   accent1Color: colors.indigo100,
   accent2Color: colors.indigo500,
-  accent3Color: colors.indigo200,
+  accent3Color: colors.indigo100,
 }
 
 const goladTheme = {...darkBaseTheme};
