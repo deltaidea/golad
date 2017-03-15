@@ -13,7 +13,7 @@ TODO: Link to a live deployment.
 - Clone this repo
 
 ```Bash
-cd WebApi
+cd Golad
 
 # Install dependencies for backend and frontend
 dotnet restore
@@ -35,7 +35,7 @@ No public API exists yet.
 #### Backend
 
 ```Bash
-cd WebApi.Tests
+cd Golad.Tests
 
 # Install dependencies
 dotnet restore

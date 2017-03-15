@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace WebApi.Tests
+namespace Golad.Tests
 {
     public class UnitTest1
     {
