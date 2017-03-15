@@ -32,7 +32,24 @@ No public API exists yet.
 
 ## Tests
 
-TODO: Enable running unit tests with `dotnet test`
+#### Backend
+
+```Bash
+cd WebApi.Tests
+
+# Install dependencies
+dotnet restore
+
+# Rebuild tests after modifications
+dotnet build
+
+# Run the unit tests
+dotnet test
+```
+
+#### Frontend
+
+TODO
 
 ## License
 
