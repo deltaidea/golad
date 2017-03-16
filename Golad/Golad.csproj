@@ -18,23 +18,13 @@
 
 
   <Target Name="Webpack" BeforeTargets="Build">
-    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <!-- Build the JS resources in dev mode -->
     <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.dev" />
     <Exec Command="node node_modules/webpack/bin/webpack.js --env.dev" />
-
-    <!-- Include the newly-built files in the publish output -->
-    <ItemGroup>
-      <DistFiles Include="wwwroot\dist\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </ResolvedFileToPublish>
-    </ItemGroup>
   </Target>
 
   <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
-    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Exec Command="npm install" />
+    <!-- Build the JS resources in production mode -->
     <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
     <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
 
