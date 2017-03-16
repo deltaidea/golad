@@ -21,25 +21,9 @@
     <None Remove="yarn.lock" />
   </ItemGroup>
 
-
-  <Target Name="Webpack" BeforeTargets="Build">
-    <!-- Build the JS resources in dev mode -->
-    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.dev" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --env.dev" />
-  </Target>
-
-  <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
-    <!-- Build the JS resources in production mode -->
-    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
-
-    <!-- Include the newly-built files in the publish output -->
-    <ItemGroup>
-      <DistFiles Include="wwwroot\dist\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </ResolvedFileToPublish>
-    </ItemGroup>
+  <Target Name="Webpack" AfterTargets="Build">
+    <!-- Build the JS resources -->
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.config=$(Configuration)" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.config=$(Configuration)" />
   </Target>
 </Project>
