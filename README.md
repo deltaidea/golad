@@ -33,9 +33,9 @@ cd Golad
 dotnet publish
 ```
 
-Default output folder is `./bin/Debug/netcoreapp1.1/publish`
+Default output folder is `./bin/Debug/netcoreapp1.1/publish`.
 
-More info about publish command [here](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-publish)
+More info about publish command [here](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-publish).
 
 ## API Reference
 
