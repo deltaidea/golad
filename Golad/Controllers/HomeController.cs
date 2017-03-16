@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace goladspa.Controllers
+namespace Golad.Controllers
 {
     public class HomeController : Controller
     {
