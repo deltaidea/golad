@@ -11,40 +11,19 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.DotNet.Watcher.Tools" Version="1.0.0-msbuild3-final" />
+  </ItemGroup>
+
   <ItemGroup>
     <!-- Files not to show in IDE -->
     <None Remove="yarn.lock" />
   </ItemGroup>
 
-
-  <Target Name="Webpack" BeforeTargets="Build">
-    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.dev" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --env.dev" />
-
-    <!-- Include the newly-built files in the publish output -->
-    <ItemGroup>
-      <DistFiles Include="wwwroot\dist\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </ResolvedFileToPublish>
-    </ItemGroup>
-  </Target>
-
-  <Target Name="RunWebpack" AfterTargets="ComputeFilesToPublish">
-    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
-    <Exec Command="npm install" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.prod" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --env.prod" />
-
-    <!-- Include the newly-built files in the publish output -->
-    <ItemGroup>
-      <DistFiles Include="wwwroot\dist\**" />
-      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
-        <RelativePath>%(DistFiles.Identity)</RelativePath>
-        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      </ResolvedFileToPublish>
-    </ItemGroup>
+  <Target Name="Webpack" AfterTargets="Build">
+    <!-- Build the JS resources -->
+    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.config=$(Configuration)" />
+    <Exec Command="node node_modules/webpack/bin/webpack.js --env.config=$(Configuration)" />
   </Target>
 </Project>

@@ -4,7 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const bundleOutputDir = './wwwroot/dist';
 
 module.exports = (env) => {
-    const isDevBuild = !(env && env.prod);
+    const isDevBuild = !(env && env.config === 'Release');
+
     return [{
         stats: { modules: false },
         entry: { 'main': './ClientApp/index.jsx' },

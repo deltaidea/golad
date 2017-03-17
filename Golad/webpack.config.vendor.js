@@ -4,7 +4,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = (env) => {
     const extractCSS = new ExtractTextPlugin('vendor.css');
-    const isDevBuild = !(env && env.prod);
+    const isDevBuild = !(env && env.config === 'Release');
+
     return [{
         stats: { modules: false },
         resolve: {
