@@ -1,14 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const bundleOutputDir = './wwwroot/dist';
+const bundleOutputDir = '../src/Golad/wwwroot/dist';
 
 module.exports = (env) => {
     const isDevBuild = !(env && env.config === 'Release');
 
     return [{
         stats: { modules: false },
-        entry: { 'main': './ClientApp/index.jsx' },
+        entry: { 'main': path.join(__dirname, '../src/Golad/ClientApp/index.jsx') },
         resolve: { extensions: [ '.js', '.jsx' ] },
         output: {
             path: path.join(__dirname, bundleOutputDir),
@@ -25,7 +25,7 @@ module.exports = (env) => {
         plugins: [
             new webpack.DllReferencePlugin({
                 context: __dirname,
-                manifest: require('./wwwroot/dist/vendor-manifest.json')
+                manifest: require('../src/Golad/wwwroot/dist/vendor-manifest.json')
             })
         ].concat(isDevBuild ? [
             // Plugins that apply in development builds only

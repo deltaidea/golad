@@ -1,7 +1,7 @@
 {
   "name": "golad",
   "version": "0.0.0",
-  "devDependencies": {
+  "dependencies": {
     "aspnet-webpack": "^1.0.27",
     "aspnet-webpack-react": "^1.0.4",
     "babel-core": "^6.17.0",
@@ -27,5 +27,7 @@
     "webpack": "^2.2.0",
     "webpack-hot-middleware": "^2.12.2"
   },
-  "dependencies": {}
+  "scripts": {
+    "build": "webpack --config webpack/webpack.config.vendor.js && webpack --config webpack/webpack.config.js"
+  }
 }

@@ -23,7 +23,6 @@
 
   <Target Name="Webpack" AfterTargets="Build">
     <!-- Build the JS resources -->
-    <Exec Command="node node_modules/webpack/bin/webpack.js --config webpack.config.vendor.js --env.config=$(Configuration)" />
-    <Exec Command="node node_modules/webpack/bin/webpack.js --env.config=$(Configuration)" />
+    <Exec Command="npm run build -- --env.config=$(Configuration)" />
   </Target>
 </Project>
