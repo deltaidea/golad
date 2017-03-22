@@ -4,9 +4,7 @@ import {Card, CardText} from 'material-ui/Card';
 
 const GameModeCard = ({name, description, isPrimary}) => (
   <Card style={{
-    minHeight: '150px',
-    paddingTop: '10px',
-    marginTop: '30px',
+    marginTop: '20px',
   }}>
     <CardText>
       <FlatButton label={name} primary={isPrimary} secondary={!isPrimary} />
