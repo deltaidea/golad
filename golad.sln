@@ -1,10 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "Golad", "Golad\Golad.csproj", "{1A94A1EF-5F51-4F79-AE8D-7923A1B8F7C1}"
+Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "Golad", "src\Golad\Golad.csproj", "{1A94A1EF-5F51-4F79-AE8D-7923A1B8F7C1}"
 EndProject
-Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "Golad.Tests", "Golad.Tests\Golad.Tests.csproj", "{817300FA-A2BC-4785-8C79-3FF44A271E08}"
+Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "Golad.Tests", "tests\Golad.Tests\Golad.Tests.csproj", "{817300FA-A2BC-4785-8C79-3FF44A271E08}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{096B1885-E884-48D7-AB62-6981C688E541}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E8280A38-A232-45C3-8207-579513893746}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,5 +47,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A94A1EF-5F51-4F79-AE8D-7923A1B8F7C1} = {096B1885-E884-48D7-AB62-6981C688E541}
+		{817300FA-A2BC-4785-8C79-3FF44A271E08} = {E8280A38-A232-45C3-8207-579513893746}
 	EndGlobalSection
 EndGlobal
