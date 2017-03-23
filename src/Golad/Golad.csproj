@@ -3,6 +3,9 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+    <!-- Workaround for dotnet cli bug (github.com/aspnet/websdk/issues/114) -->
+      <GeneratedItemPatterns>wwwroot/**;</GeneratedItemPatterns>
+      <DefaultItemExcludes>$(DefaultItemExcludes);$(GeneratedItemPatterns)</DefaultItemExcludes>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
@@ -22,5 +25,13 @@
   <Target Name="Webpack" AfterTargets="Build">
     <!-- Build the JS resources -->
     <Exec Command="npm run build -- --env.config=$(Configuration)" />
+  </Target>
+
+  <!-- Workaround for dotnet cli bug -->
+  <Target Name="PrePublishTarget" BeforeTargets="PrepareForPublish">
+    <ItemGroup>
+      <_GeneratedFiles Include="$(GeneratedItemPatterns)" />
+      <ContentWithTargetPath Include="@(_GeneratedFiles->'%(FullPath)')" RelativePath="%(_GeneratedFiles.Identity)" TargetPath="%(_GeneratedFiles.Identity)" CopyToPublishDirectory="PreserveNewest" />
+    </ItemGroup>
   </Target>
 </Project>
