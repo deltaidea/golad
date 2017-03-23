@@ -1,17 +1,19 @@
 import React from 'react';
 import GameModeCard from './GameModeCard';
 import {Grid, Row, Col} from 'react-flexbox-grid';
-import GameTitleCard from './GameTitleCard';
+import muiThemeable from 'material-ui/styles/muiThemeable';
+import Icon from './Icon';
 
-const colSizing = {xs: 12, md: 8, lg: 6}
-
-const HomePage = () => (
+const HomePage = ({muiTheme}) => (
   <Grid fluid>
     <Row center="xs">
-      <Col {...colSizing}><GameTitleCard /></Col>
+      <Icon width='50%' maxWidth='300px'
+        playerColor={muiTheme.palette.primary2Color}
+        opponentColor={muiTheme.palette.accent2Color}/>
+      <div style={{marginTop: '1em', fontSize: '2em'}}>Game of Life and Death</div>
     </Row>
     <Row center="xs">
-      <Col {...colSizing}>
+      <Col xs={12} md={8} lg={6}>
         <GameModeCard
           name="Random opponent"
           isPrimary={true}
@@ -30,4 +32,4 @@ const HomePage = () => (
   </Grid>
 );
 
-export default HomePage;
+export default muiThemeable()(HomePage);
