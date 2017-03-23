@@ -1,6 +1,11 @@
 {
   "name": "golad",
   "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deltaidea/golad.git"
+  },
   "dependencies": {
     "aspnet-webpack": "^1.0.27",
     "aspnet-webpack-react": "^1.0.4",
