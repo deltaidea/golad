@@ -19,16 +19,13 @@
     "material-ui": "^0.17.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-flexbox-grid": "https://github.com/roylee0704/react-flexbox-grid.git#master",
+    "react-flexbox-grid": "^1.0.0",
     "react-router": "^2.8.1",
     "react-tap-event-plugin": "^2.0.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.0",
     "webpack-hot-middleware": "^2.12.2"
-  },
-  "scripts": {
-    "postinstall": "(cd node_modules/react-flexbox-grid && npm install && npm run build)"
   },
   "dependencies": {}
 }
