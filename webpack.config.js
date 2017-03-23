@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractStyles = new ExtractTextPlugin('vendor.css');
+const extractMainStyles = new ExtractTextPlugin('main.css');
+const extractVendorStyles = new ExtractTextPlugin('vendor.css');
 const bundleOutputDir = path.join(__dirname, './src/Golad/wwwroot/dist');
 
 module.exports = (env) => {
@@ -25,14 +26,15 @@ module.exports = (env) => {
     module: {
       rules: [
         { test: /\.(js|jsx)$/, include: /ClientApp/, use: 'babel-loader' },
-        { test: /\.css$/, include: /ClientApp/, use: ['style-loader', 'css-loader'] },
+        { test: /\.css$/, include: /ClientApp/, use: extractMainStyles.extract(['css-loader']) },
         { test: /\.(png|jpg|jpeg|gif|svg)$/, include: /ClientApp/, use: 'url-loader?limit=25000' },
-        { test: /\.css(\?|$)/, include: /node_modules/, use: extractStyles.extract(['css-loader']) },
+        { test: /\.css(\?|$)/, include: /node_modules/, use: extractVendorStyles.extract(['css-loader']) },
         { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, include: /node_modules/, use: 'url-loader?limit=100000' }
       ]
     },
     plugins: [
-      extractStyles,
+      extractMainStyles,
+      extractVendorStyles,
       sourceMapsOrUglify,
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': isDevBuild ? '"development"' : '"production"'

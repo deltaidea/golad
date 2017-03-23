@@ -33,6 +33,14 @@
     "webpack-hot-middleware": "^2.12.2"
   },
   "scripts": {
-    "build": "webpack"
+    "webpack": "webpack",
+    "build": "webpack \"--env.config=Release\" -p",
+    "start": "webpack-dev-server",
+    "app-dev": "cd src/Golad && cross-env ASPNETCORE_ENVIRONMENT=Development dotnet run && cd ../..",
+    "app-prod": "cd src/Golad && cross-env ASPNETCORE_ENVIRONMENT=Production dotnet run && cd ../.."
+  },
+  "devDependencies": {
+    "cross-env": "^3.2.4",
+    "webpack-dev-server": "^2.4.2"
   }
 }

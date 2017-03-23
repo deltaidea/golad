@@ -24,7 +24,7 @@
   </ItemGroup>
   <Target Name="Webpack" AfterTargets="Build">
     <!-- Build the JS resources -->
-    <Exec Command="npm run build -- --env.config=$(Configuration)" />
+    <Exec Command="npm run webpack -- --env.config=$(Configuration)" />
   </Target>
 
   <!-- Workaround for dotnet cli bug -->

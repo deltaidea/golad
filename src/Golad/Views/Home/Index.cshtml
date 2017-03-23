@@ -4,6 +4,22 @@
 
 <div id="root"></div>
 
+@section styles {
+    <!-- Let's preload the font here so the page doesn't flicker on load. -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="~/dist/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
+}
+
 @section scripts {
-    <script src="~/dist/main.js" asp-append-version="true"></script>
+    <environment names="Development">
+        <script src="http://localhost:8080/dist/manifest.js"></script>
+        <script src="http://localhost:8080/dist/vendor.js"></script>
+        <script src="http://localhost:8080/dist/main.js"></script>
+    </environment>
+    <environment names="Production">
+        <script src="~/dist/manifest.js" asp-append-version="true"></script>
+        <script src="~/dist/vendor.js" asp-append-version="true"></script>
+        <script src="~/dist/main.js" asp-append-version="true"></script>
+    </environment>
 }
