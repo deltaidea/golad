@@ -1,0 +1,19 @@
+{
+  "name": "Game of Life and Death",
+  "description": "An implementation of the Game of Life and Death in .NET Core and React.",
+  "repository": "https://github.com/deltaidea/golad",
+  "stack": "heroku-16",
+  "buildpacks": [
+    {"url": "heroku/nodejs"},
+    {"url": "https://github.com/jincod/dotnetcore-buildpack"}
+  ],
+  "addons": [
+    {"plan": "cleardb:ignite", "as": "CLEARDB_DATABASE"}
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
