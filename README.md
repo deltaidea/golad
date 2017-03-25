@@ -4,7 +4,7 @@ An implementation of the [Game of Life and Death](https://www.youtube.com/watch?
 
 ## Play
 
-TODO: Link to a live deployment.
+Although the game is not yet finished, you can see the latest version built from `master` here: https://glacial-springs-72583.herokuapp.com/
 
 ## Quickstart
 
@@ -13,8 +13,6 @@ TODO: Link to a live deployment.
 - Clone this repo
 
 ```Bash
-cd Golad
-
 # Install dependencies for backend and frontend
 dotnet restore
 npm install
@@ -22,18 +20,29 @@ npm install
 # Rebuild the project after modifications
 dotnet build
 
-# Start the server locally
-dotnet run
+# Start the server locally in production mode - with ASPNETCORE_ENVIRONMENT=Production
+npm run app-prod
+```
+
+#### Use live reload when working on frontend
+
+```Bash
+# In a separate terminal, use this to start webpack-dev-server
+# This provides JS assets on a separate port. The server in dev mode links `<script>`s to it
+# Webpack will watch for changes and refresh the page after recompiling
+npm start
+
+# Start the server locally in dev mode - with ASPNETCORE_ENVIRONMENT=Development
+npm run app-dev
 ```
 
 ## Production build
 
 ```Bash
-cd Golad
 dotnet publish
 ```
 
-Default output folder is `./bin/Debug/netcoreapp1.1/publish`.
+Default output folder is `src/Golad/bin/Debug/netcoreapp1.1/publish/`.
 
 More info about publish command [here](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-publish).
 
@@ -46,15 +55,7 @@ No public API exists yet.
 #### Backend
 
 ```Bash
-cd Golad.Tests
-
-# Install dependencies
-dotnet restore
-
-# Rebuild tests after modifications
-dotnet build
-
-# Run the unit tests
+cd tests/Golad.Tests
 dotnet test
 ```
 
