@@ -4,7 +4,7 @@ An implementation of the [Game of Life and Death](https://www.youtube.com/watch?
 
 ## Play
 
-TODO: Link to a live deployment.
+Although the game is not yet finished, you can see the latest version built from `master` here: https://glacial-springs-72583.herokuapp.com/
 
 ## Quickstart
 
