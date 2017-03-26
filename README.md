@@ -46,6 +46,14 @@ Default output folder is `src/Golad/bin/Debug/netcoreapp1.1/publish/`.
 
 More info about publish command [here](https://docs.microsoft.com/en-us/dotnet/articles/core/tools/dotnet-publish).
 
+#### Deploying for fun
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/deltaidea/golad)
+
+This is completely free.
+
+Go to the app settings and change automatic deploys to use your fork if you want.
+
 ## API Reference
 
 No public API exists yet.
