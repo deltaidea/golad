@@ -5,3 +5,4 @@
 **/Properties/**/*
 *.user
 /node_modules/**
+/coverage/**
