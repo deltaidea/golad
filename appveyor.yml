@@ -5,8 +5,10 @@ environment:
 
 # build cache to preserve files/folders between builds
 cache:
-  - node_modules                    # local npm modules
+  - node_modules                                    # local npm modules
   - '%LocalAppData%\NuGet\Cache'
+  - '%APPDATA%\npm-cache'                           # npm cache
+  - '%USERPROFILE%\.nuget\packages -> **\*.csproj'  # project.json cache
 
 # Install scripts. (runs after repo cloning)
 install:
