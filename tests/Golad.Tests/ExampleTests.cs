@@ -14,16 +14,5 @@ namespace Golad.Tests
 
             Assert.Equal(2, result);
         }
-
-        [Fact]
-        public void FailingTest()
-        {
-            var a = 1;
-            var b = 1;
-
-            var result = a + b;
-
-            Assert.Equal(3, result);
-        }
     }
 }
