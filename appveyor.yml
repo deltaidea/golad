@@ -16,8 +16,11 @@ test_script:
   # run tests
   - npm test
 
-# Don't actually build.
-build: off
+# Backend tests
+test:
+  # assemblies to test
+  assemblies:
+    - '**\*.Tests.dll'
 
 # Don't build a branch if there's a PR from it.
 skip_branch_with_pr: true
