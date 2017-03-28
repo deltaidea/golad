@@ -28,12 +28,8 @@ test_script:
   - npm --version
   # run tests
   - npm test
-
-# Backend tests
-test:
-  # assemblies to test
-  assemblies:
-    - '**\*.Tests.dll'
+  - cd tests/Golad.Tests/
+  - dotnet test
 
 # Don't build a branch if there's a PR from it.
 skip_branch_with_pr: true
