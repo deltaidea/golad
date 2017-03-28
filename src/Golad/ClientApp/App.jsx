@@ -1,9 +1,9 @@
 import React from 'react';
-import BackgroundPaper from './BackgroundPaper';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import * as colors from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import muiThemeable from 'material-ui/styles/muiThemeable';
 import HomePage from './home/HomePage';
 
 const goladColors = {
@@ -17,12 +17,26 @@ const goladColors = {
 
 const goladTheme = {...darkBaseTheme};
 goladTheme.palette = {...goladTheme.palette, ...goladColors};
+const muiTheme = getMuiTheme(goladTheme);
 
+/**
+ * Just a plain div that takes up the whole screen and
+ * applies background color based on the theme.
+ *
+ * Pages that led to this solution:
+ * - http://www.material-ui.com/#/customization/themes
+ * - http://stackoverflow.com/a/40746742
+ * - http://stackoverflow.com/q/38428322
+ */
 const App = () => (
-  <MuiThemeProvider muiTheme={getMuiTheme(goladTheme)}>
-    <BackgroundPaper>
+  <MuiThemeProvider muiTheme={muiTheme}>
+    <div style={{
+      backgroundColor: muiTheme.palette.canvasColor,
+      minWidth: "100%",
+      minHeight: "100%",
+    }}>
       <HomePage />
-    </BackgroundPaper>
+    </div>
   </MuiThemeProvider>
 );
 
