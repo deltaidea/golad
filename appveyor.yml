@@ -19,6 +19,7 @@ install:
 build_script:
   - dotnet restore
   - dotnet build -c Release
+  - npm run build
 
 # Post-install test scripts.
 test_script:
