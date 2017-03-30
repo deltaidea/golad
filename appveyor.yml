@@ -1,5 +1,14 @@
+image: Visual Studio 2017
+
 environment:
   nodejs_version: "6"
+
+# build cache to preserve files/folders between builds
+cache:
+  - node_modules                                    # local npm modules
+  - '%LocalAppData%\NuGet\Cache'
+  - '%APPDATA%\npm-cache'                           # npm cache
+  - '%USERPROFILE%\.nuget\packages -> **\*.csproj'  # project.json cache
 
 # Install scripts. (runs after repo cloning)
 install:
@@ -8,6 +17,12 @@ install:
   # install modules
   - npm install
 
+# Build script
+build_script:
+  - dotnet restore
+  - dotnet build -c Release
+  - npm run build
+
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
@@ -15,9 +30,8 @@ test_script:
   - npm --version
   # run tests
   - npm test
-
-# Don't actually build.
-build: off
+  - cd tests/Golad.Tests/
+  - dotnet test
 
 # Don't build a branch if there's a PR from it.
 skip_branch_with_pr: true
