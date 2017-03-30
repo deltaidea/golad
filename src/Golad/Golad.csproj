@@ -25,6 +25,8 @@
 
   <!-- Workaround for dotnet cli bug -->
   <Target Name="PrePublishTarget" BeforeTargets="PrepareForPublish">
+    <!-- Build the JS resources -->
+    <Exec Command="npm run build -- --env.config=$(Configuration)" />
     <ItemGroup>
       <_GeneratedFiles Include="$(GeneratedItemPatterns)" />
       <ContentWithTargetPath Include="@(_GeneratedFiles->'%(FullPath)')" RelativePath="%(_GeneratedFiles.Identity)" TargetPath="%(_GeneratedFiles.Identity)" CopyToPublishDirectory="PreserveNewest" />
