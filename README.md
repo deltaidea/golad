@@ -10,7 +10,7 @@ An implementation of the [Game of Life and Death](https://www.youtube.com/watch?
 
 ## Play
 
-Although the game is not yet finished, you can see the latest version built from `master` here: https://glacial-springs-72583.herokuapp.com/
+Although the game is not yet finished, you can see the latest version built from `master` here: http://game-of-life-and-death.herokuapp.com/
 
 ## Quickstart
 
