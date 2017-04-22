@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Icon = ({width, maxWidth, playerColor, opponentColor}) => (
-  <svg viewBox="0 0 270 170" width={width} style={{maxWidth}} xmlns="http://www.w3.org/2000/svg">
+const Icon = ({attrs = {}, playerColor, opponentColor}) => (
+  <svg viewBox="0 0 270 170" {...attrs} xmlns="http://www.w3.org/2000/svg">
     <rect height="70" width="70" y="0" x="0" fill={playerColor}/>
     <rect height="70" width="70" y="0" x="100" fill={playerColor}/>
     <rect height="70" width="70" y="100" x="100" fill={opponentColor}/>

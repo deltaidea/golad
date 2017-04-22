@@ -31,9 +31,11 @@ const muiTheme = getMuiTheme(goladTheme);
 const App = () => (
   <MuiThemeProvider muiTheme={muiTheme}>
     <div style={{
-      backgroundColor: muiTheme.palette.canvasColor,
       minWidth: "100%",
       minHeight: "100%",
+      backgroundColor: muiTheme.palette.canvasColor,
+      color: muiTheme.palette.textColor,
+      fontFamily: 'Roboto, sans-serif',
     }}>
       <HomePage />
     </div>
