@@ -12,12 +12,8 @@ const HomePageHero = (props) => (<div style={{
 </div>)
 
 const StyledIcon = (props) => (<Icon
-  attrs={{
-    height: '20vh',
-    style: {
-      maxWidth: '50vw',
-    },
-  }}
+  style={{maxWidth: '50vw'}}
+  height="20vh"
   playerColor={props.muiTheme.palette.primary2Color}
   opponentColor={props.muiTheme.palette.accent2Color}
 />)
