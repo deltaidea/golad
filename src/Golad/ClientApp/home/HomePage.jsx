@@ -1,34 +1,53 @@
-import React from 'react';
-import GameModeCard from './GameModeCard';
-import {Grid, Row, Col} from 'react-flexbox-grid';
-import GameTitleCard from './GameTitleCard';
+import React, { Component } from 'react';
+import {List, ListItem} from 'material-ui/List';
+import muiThemeable from 'material-ui/styles/muiThemeable';
+import Icon from './Icon';
+import IconRandomOpponent from 'material-ui/svg-icons/social/public';
+import IconPlayOnline from 'material-ui/svg-icons/social/people';
+import IconSingleplayer from 'material-ui/svg-icons/social/person';
+import IconPlayOnThisDevice from 'material-ui/svg-icons/hardware/smartphone';
 
-const colSizing = {xs: 12, md: 8, lg: 4}
+const HomePageHero = (props) => (<div style={{
+  backgroundColor: '#202020',
+  padding: '10vh',
+  textAlign: 'center'
+}}>
+  {props.children}
+</div>)
 
-const HomePage = () => (
-  <Grid fluid>
-    <Row center="xs">
-      <Col {...colSizing}><GameTitleCard /></Col>
-    </Row>
-    <Row center="xs">
-      <Col {...colSizing}>
-        <GameModeCard
-          name="Random opponent"
-          isPrimary={true}
-          description="We will choose an opponent for you among others currently on the website." />
-      </Col>
-      <Col {...colSizing} first="lg">
-        <GameModeCard
-          name="Play with a friend"
-          description="Press to get a link. Share the link with the opponent. The game will start once they open it." />
-      </Col>
-      <Col {...colSizing}>
-        <GameModeCard
-          name="Local game"
-          description="Play with a friend on the same device. Take turns." />
-      </Col>
-    </Row>
-  </Grid>
-);
+const StyledIcon = (props) => (<Icon
+  style={{maxWidth: '50vw'}}
+  height="20vh"
+  playerColor={props.muiTheme.palette.primary2Color}
+  opponentColor={props.muiTheme.palette.accent2Color}
+/>)
 
-export default HomePage;
+const GameMode = ({icon, name}) => (<ListItem
+  leftIcon={icon}
+  primaryText={name}
+  innerDivStyle={{
+    maxWidth: '1000px',
+    margin: 'auto',
+  }}
+/>)
+
+class HomePage extends Component {
+  render() {
+    return (
+      <div>
+        <HomePageHero>
+          <StyledIcon muiTheme={this.props.muiTheme}/>
+          <div style={{paddingTop: 20}}>Game of Life and Death</div>
+        </HomePageHero>
+        <List style={{padding: 0}}>
+          <GameMode icon={<IconRandomOpponent />} name="Random opponent" />
+          <GameMode icon={<IconPlayOnline />} name="Play with a friend online" />
+          <GameMode icon={<IconSingleplayer />} name="Singleplayer" />
+          <GameMode icon={<IconPlayOnThisDevice />} name="Play with a friend on this device" />
+        </List>
+      </div>
+    )
+  }
+}
+
+export default muiThemeable()(HomePage);

@@ -10,7 +10,7 @@ test('it renders svg with specified colors', () => {
 });
 
 test('it sets specified width and max-width', () => {
-  const icon = shallow(<Icon width='30%' maxWidth={500} />);
+  const icon = shallow(<Icon width='30%' style={{maxWidth: 500}} />);
 
   expect(icon.find('svg').prop('width')).toEqual('30%');
   expect(icon.find('svg').prop('style').maxWidth).toEqual(500);
