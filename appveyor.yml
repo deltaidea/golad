@@ -8,7 +8,7 @@ cache:
   - node_modules
   - '%LocalAppData%\NuGet\Cache'
   - '%APPDATA%\npm-cache'
-  - '%USERPROFILE%\.nuget\packages -> src/**/*.csproj'
+  - '%USERPROFILE%\.nuget\packages -> src\**\*.csproj'
 
 # Install scripts. (runs after repo cloning)
 install:
