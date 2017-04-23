@@ -22,6 +22,15 @@ const StyledIcon = (props) => (<Icon
   opponentColor={props.muiTheme.palette.accent2Color}
 />)
 
+const GameMode = ({icon, name}) => (<ListItem
+  leftIcon={icon}
+  primaryText={name}
+  innerDivStyle={{
+    maxWidth: '1000px',
+    margin: 'auto',
+  }}
+/>)
+
 class HomePage extends Component {
   render() {
     return (
@@ -31,10 +40,10 @@ class HomePage extends Component {
           <div style={{paddingTop: 20}}>Game of Life and Death</div>
         </HomePageHero>
         <List style={{padding: 0}}>
-          <ListItem leftIcon={<IconRandomOpponent />} primaryText="Random opponent" />
-          <ListItem leftIcon={<IconPlayOnline />} primaryText="Play with a friend online" />
-          <ListItem leftIcon={<IconSingleplayer />} primaryText="Singleplayer" />
-          <ListItem leftIcon={<IconPlayOnThisDevice />} primaryText="Play with a friend on this device" />
+          <GameMode icon={<IconRandomOpponent />} name="Random opponent" />
+          <GameMode icon={<IconPlayOnline />} name="Play with a friend online" />
+          <GameMode icon={<IconSingleplayer />} name="Singleplayer" />
+          <GameMode icon={<IconPlayOnThisDevice />} name="Play with a friend on this device" />
         </List>
       </div>
     )
