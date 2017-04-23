@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {List, ListItem} from 'material-ui/List';
+import {Link} from 'react-router-dom';
 import muiThemeable from 'material-ui/styles/muiThemeable';
 import Icon from './Icon';
 import IconRandomOpponent from 'material-ui/svg-icons/social/public';
@@ -22,14 +23,16 @@ const StyledIcon = (props) => (<Icon
   opponentColor={props.muiTheme.palette.accent2Color}
 />)
 
-const GameMode = ({icon, name}) => (<ListItem
-  leftIcon={icon}
-  primaryText={name}
-  innerDivStyle={{
-    maxWidth: '1000px',
-    margin: 'auto',
-  }}
-/>)
+const GameMode = ({icon, name}) => (<Link to="/game" style={{textDecoration: 'none'}}>
+  <ListItem
+    leftIcon={icon}
+    primaryText={name}
+    innerDivStyle={{
+      maxWidth: '1000px',
+      margin: 'auto',
+    }}
+  />
+</Link>)
 
 class HomePage extends Component {
   render() {

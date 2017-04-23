@@ -26,6 +26,7 @@
     "react-dom": "^15.3.2",
     "react-flexbox-grid": "^1.0.0",
     "react-router": "^2.8.1",
+    "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
@@ -49,6 +50,8 @@
   },
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": ["src/Golad/ClientApp/**/*.{js,jsx}"]
+    "collectCoverageFrom": [
+      "src/Golad/ClientApp/**/*.{js,jsx}"
+    ]
   }
 }
