@@ -27,26 +27,10 @@ class HomePage extends Component {
           <div style={{paddingTop: 20}}>Game of Life and Death</div>
         </HomePageHero>
         <List style={{padding: 0}}>
-          <ListItem
-            primaryText="Random opponent"
-            secondaryText="We will choose an opponent for you among others currently on the website"
-            secondaryTextLines={2}
-          />
-          <ListItem
-            primaryText="Singleplayer"
-            secondaryText="Play against an AI. Works even offline"
-            secondaryTextLines={2}
-          />
-          <ListItem
-            primaryText="Play with a friend"
-            secondaryText="Press to get a link. Share the link with the opponent. The game will start once they open it"
-            secondaryTextLines={2}
-          />
-          <ListItem
-            primaryText="Local game"
-            secondaryText="Play with a friend on the same device. Take turns"
-            secondaryTextLines={2}
-          />
+          <ListItem primaryText="Random opponent" />
+          <ListItem primaryText="Singleplayer" />
+          <ListItem primaryText="Play with a friend" />
+          <ListItem primaryText="Local game" />
         </List>
       </div>
     )
