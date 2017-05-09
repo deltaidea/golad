@@ -7,6 +7,7 @@ An implementation of the [Game of Life and Death](https://www.youtube.com/watch?
 | CI | [![AppVeyor](https://img.shields.io/appveyor/ci/deltaidea/golad/master.svg)](https://ci.appveyor.com/project/deltaidea/golad)
 | Frontend deps | [![David](https://img.shields.io/david/deltaidea/golad.svg)](https://david-dm.org/deltaidea/golad) [![David](https://img.shields.io/david/dev/deltaidea/golad.svg)](https://david-dm.org/deltaidea/golad?type=dev)
 | Repo stats | [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/deltaidea/golad.svg)](http://isitmaintained.com/project/deltaidea/golad "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/deltaidea/golad.svg)](http://isitmaintained.com/project/deltaidea/golad "Percentage of issues still open")
+| Style guide | [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Play
 
