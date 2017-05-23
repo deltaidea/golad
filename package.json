@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "aspnet-webpack": "^1.0.27",
-    "aspnet-webpack-react": "^1.0.4",
+    "aspnet-webpack-react": "^2.0.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
