@@ -24,7 +24,7 @@
     "material-ui": "^0.18.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-flexbox-grid": "^1.0.0",
+    "react-flexbox-grid": "^2.0.0",
     "react-router": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
     "style-loader": "^0.18.0",
