@@ -2,15 +2,9 @@
 
 An implementation of the [Game of Life and Death](https://www.youtube.com/watch?v=JkGZ2Hl1l8c) in .NET Core and React.
 
-| Status | Description |
-|--|--|
-| CI | [![AppVeyor](https://img.shields.io/appveyor/ci/deltaidea/golad/master.svg)](https://ci.appveyor.com/project/deltaidea/golad)
-| Frontend deps | [![David](https://img.shields.io/david/deltaidea/golad.svg)](https://david-dm.org/deltaidea/golad) [![David](https://img.shields.io/david/dev/deltaidea/golad.svg)](https://david-dm.org/deltaidea/golad?type=dev)
-| Repo stats | [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/deltaidea/golad.svg)](http://isitmaintained.com/project/deltaidea/golad "Average time to resolve an issue") [![Percentage of issues still open](http://isitmaintained.com/badge/open/deltaidea/golad.svg)](http://isitmaintained.com/project/deltaidea/golad "Percentage of issues still open")
-
 ## Play
 
-Although the game is not yet finished, you can see the latest version built from `master` here: http://game-of-life-and-death.herokuapp.com/
+This app used to be hosted on Heroku back in 2017. Heroku has since discontinued their free tier option. As of now, there's no live demo available.
 
 ## Quickstart
 
